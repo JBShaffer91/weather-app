@@ -7,6 +7,29 @@
   <body>
     <div class="container">
       <h1>Weather App</h1>
-      
+      <form id="weatherForm">
+        <label for="cityInput">City:</label>
+        <input type="text" id="cityInput" name="cityInput">
+        <br>
+        <label for="countryInput">Country:</label>
+        <input type="text" id="countryInput" name="countryInput">
+        <br>
+        <button type="submit">Get Weather</button>
+      </form>
+      <div id="weatherDisplay">
+        <h2 id="location"></h2>
+        <p id="description"></p>
+        <img id="icon" src="" alt="">
+        <p id="temp"></p>
+        <p id="tempMinMax"></p>
+        <p id="feelsLike"></p>
+        <p id="humidity"></p>
+        <p id="pressure"></p>
+        <p id="wind"></p>
+        <p id="sunrise"></p>
+        <p id="sunset"></p>
+      </div>
+    </div>
+    <script src="bundle.js"></script>
   </body>
 </html>

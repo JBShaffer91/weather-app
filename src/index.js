@@ -45,5 +45,7 @@ async function handleFormSubmit(event) {
 }
 
 // Add event listener to form
-const form = document.getElementById('weather-form');
-form.addEventListener('submit', handleFormSubmit);
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById('weatherForm');
+  form.addEventListener('submit', handleFormSubmit);
+});
