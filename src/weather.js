@@ -17,6 +17,11 @@ async function getWeatherData(city, country) {
       }
     });
 
+    // Check if API returned an error
+    if (response.data.cod && response.data.cod !== 200) {
+      throw new Error(response.data.message);
+    }
+
     // Extract relevant information from API response
     const { weather, main, wind, sys } = response.data;
 
@@ -50,3 +55,4 @@ async function getWeatherData(city, country) {
     throw new Error('Unable to retrieve weather data');
   }
 }
+
