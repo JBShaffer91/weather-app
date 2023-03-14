@@ -2,7 +2,7 @@ const axios = require('axios');
 
 // Set default parameters for API request
 const params = {
-  appid: '7e79cb953cdac3aeccf2d596ff8b595d',
+  appid: 'GET-NEW-API-KEY',
   units: 'metric' // Celsius by default
 };
 

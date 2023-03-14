@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="container">
       <h1>Weather App</h1>
       <form id="weatherForm">
         <label for="cityInput">City:</label>
-        <input type="text" id="cityInput" name="cityInput">
+        <input type="text" id="cityInput" name="cityInput" required>
         <br>
         <label for="countryInput">Country:</label>
-        <input type="text" id="countryInput" name="countryInput">
+        <input type="text" id="countryInput" name="countryInput" required>
         <br>
         <button type="submit">Get Weather</button>
       </form>
+      <div id="loadingIndicator">
+        <img src="loading.gif" alt="Loading...">
+      </div>
       <div id="weatherDisplay">
+        <div id="errorMessage"></div>
         <h2 id="location"></h2>
         <p id="description"></p>
         <img id="icon" src="" alt="">
