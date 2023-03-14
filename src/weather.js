@@ -31,15 +31,21 @@ async function getWeatherData(city, country) {
     const { speed, deg } = wind;
     const { sunrise, sunset } = sys;
 
-    // Temperature conversion to Fahrenheit
-    const tempF = (main.temp * 9/5) + 32;
+    // Temperature conversion functions
+    function celsiusToFahrenheit(temp) {
+      return (temp * 9/5) + 32;
+    }
+
+    function fahrenheitToCelsius(temp) {
+      return (temp - 32) * 5/9;
+    }
 
     // Return an object with all the relevant information
     return {
       description,
       icon,
       tempC: main.temp,
-      tempF,
+      tempF: celsiusToFahrenheit(main.temp),
       temp_min,
       temp_max,
       feels_like,
@@ -48,11 +54,12 @@ async function getWeatherData(city, country) {
       speed,
       deg,
       sunrise,
-      sunset
+      sunset,
+      celsiusToFahrenheit,
+      fahrenheitToCelsius
     };
   } catch (error) {
     console.error(error);
     throw new Error('Unable to retrieve weather data');
   }
 }
-
